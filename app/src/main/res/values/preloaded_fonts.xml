@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="preloaded_fonts" translatable="false">
+        <item>@font/actor</item>
         <item>@font/adamina</item>
         <item>@font/averia_gruesa_libre</item>
         <item>@font/carter_one</item>
         <item>@font/crete_round</item>
+        <item>@font/domine</item>
+        <item>@font/montserrat</item>
         <item>@font/roboto_medium</item>
+        <item>@font/sura</item>
     </array>
 </resources>
