@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "363361181854",
+    "project_id": "myfitpal-63a34",
+    "storage_bucket": "myfitpal-63a34.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:363361181854:android:997c2eb1d016b458945b8f",
+        "android_client_info": {
+          "package_name": "com.jathiswarbhaskar.myfitpal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "363361181854-0s7ohis06g1531i88lif5setugtj67vt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUtCdIM9a2pbEMOJcvd0aaAp2lec9SdbI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "363361181854-0s7ohis06g1531i88lif5setugtj67vt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
