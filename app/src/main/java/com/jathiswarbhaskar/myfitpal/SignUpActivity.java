@@ -8,6 +8,7 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.WindowManager;
@@ -32,7 +33,7 @@ private FirebaseAuth mAuth;
         setContentView(R.layout.activity_sign_up);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        signupbtn = (Button) findViewById(R.id.signup_button);
+        signupbtn = (Button) findViewById(R.id.register_btn);
         memail = (EditText) findViewById(R.id.register_email_input);
         mpassword=(EditText) findViewById(R.id.register_password_input);
         mrecheck = (EditText) findViewById(R.id.register_password_input_1);
@@ -111,9 +112,15 @@ private FirebaseAuth mAuth;
                                    AlertDialog alert11 = registration.create();
                                    alert11.show();
 
+                                   Handler handler = new Handler();
+                                   handler.postDelayed(new Runnable() {
+                                       public void run() {
+                                           Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
+                                           startActivity(intent);
+                                       }
+                                   }, 4000);
 
-                                   Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
-                                   startActivity(intent);
+
                                }
                                else{
                                    Toast.makeText(SignUpActivity.this,"Error!"+task.getException().getMessage(),Toast.LENGTH_SHORT).show();
