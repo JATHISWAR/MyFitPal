@@ -39,11 +39,13 @@ public class MainActivity extends AppCompatActivity {
 
 
         memail = (EditText) findViewById(R.id.login_email_input);
+        signupbtn = (Button) findViewById(R.id.signup_button);
         mpassword = (EditText) findViewById(R.id.login_password_input);
         loginbtn = (Button) findViewById(R.id.login_button);
         mAuth = FirebaseAuth.getInstance();
         loadingBar = new ProgressDialog(this);
         Login();
+        Signup();
 
 
     }
@@ -108,6 +110,26 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
+    public void Signup(){
+
+        signupbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,SignUpActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+
+
+    }
+
+
+
 
 
 
