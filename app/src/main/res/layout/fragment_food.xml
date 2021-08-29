@@ -8,4 +8,18 @@
         android:text="Food Fragment"
         android:textSize="30sp"
         android:layout_centerInParent="true"/>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="183dp"
+        android:layout_height="120dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="115dp"
+        android:layout_marginTop="402dp"
+        android:layout_marginEnd="113dp"
+        android:layout_marginBottom="209dp"
+        android:text="Button" />
 </RelativeLayout>
