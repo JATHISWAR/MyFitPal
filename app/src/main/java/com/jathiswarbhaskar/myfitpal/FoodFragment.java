@@ -88,7 +88,7 @@ public class FoodFragment extends Fragment {
     }
     private void jsonParse() {
 
-        String url = "https://myjson.dit.upm.es/api/bins/18u4";
+        String url = "https://myjson.dit.upm.es/api/bins/wkg";
         String search_item = getsearch.getText().toString().toLowerCase();
         String ua = "Mozilla/5.0 (Windows; U; WindowsNT 5.1; en-US; rv1.8.1.6) Gecko/20070725 Firefox/2.0.0.6";
 
@@ -102,12 +102,26 @@ public class FoodFragment extends Fragment {
                             for (int i = 0; i < jsonArray.length(); i++) {
                                 JSONObject employee = jsonArray.getJSONObject(i);
 
+
                                 String food = employee.getString("Food");
                                 String searchfood = food.toLowerCase();
-                                String serving = employee.getString("Serving");
+                                String measure = employee.getString("Measure");
+                                String grams = employee.getString("Grams");
                                 String calories = employee.getString("Calories");
+                                String protein = employee.getString("Protein");
+                                String fat = employee.getString("Fat");
+                                String sat_fat = employee.getString("Sat.Fat");
+                                String fiber = employee.getString("Fiber");
+                                String carbs = employee.getString("Carbs");
+
+
+
                                 if(searchfood.equals(search_item)||searchfood.contains(search_item)) {
-                                    displayText.append("Item name: " + food + "\n Item serving: " + serving + "\n Calories: " + calories+"\n\n");
+                                    displayText.append("Item name: " + food + "\n Item measure: " + measure
+                                            + "\n Item grams: " + grams+ "\n Item calories: " + calories
+                                            + "\n Item protein: " + protein + "\n Item fat: " + fat
+                                            + "\n Item saturated fat: " + sat_fat + "\n Item fiber: " + fiber
+                                            + "\n Item carbohydrates: " + carbs+"\n\n");
                                     //String res = getImage(search_item, ua);
                                    // displayText.append(res);
                                 }
