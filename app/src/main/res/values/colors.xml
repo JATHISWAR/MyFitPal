@@ -10,4 +10,5 @@
     <color name= "grey">#434c59</color>
     <color name="white">#FFFFFFFF</color>
     <color name ="buttoncolor">#73ff70</color>
+    <color name="search_button_color">#052963</color>
 </resources>

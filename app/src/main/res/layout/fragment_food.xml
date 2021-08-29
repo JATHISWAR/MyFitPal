@@ -1,25 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="#37cca7"
-    android:layout_width="match_parent" android:layout_height="match_parent">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Food Fragment"
-        android:textSize="30sp"
-        android:layout_centerInParent="true"/>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="183dp"
-        android:layout_height="120dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="115dp"
-        android:layout_marginTop="402dp"
-        android:layout_marginEnd="113dp"
-        android:layout_marginBottom="209dp"
-        android:text="Button" />
-</RelativeLayout>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/searchbtn"
+        android:layout_width="245dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/search_button"
+        android:text="Search"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_input"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/search_input"
+        android:layout_width="359dp"
+        android:layout_height="61dp"
+        android:background="@drawable/input_design"
+        android:hint="Search..."
+        android:padding="20dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="19sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.08" />
+
+    <TextView
+        android:id="@+id/food_textview"
+        android:layout_width="372dp"
+        android:layout_height="95dp"
+        android:text="test"
+        android:textSize="50dp"
+        android:padding="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchbtn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
