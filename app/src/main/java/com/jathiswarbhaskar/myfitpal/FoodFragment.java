@@ -1,6 +1,8 @@
 package com.jathiswarbhaskar.myfitpal;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -43,10 +45,10 @@ import java.util.Queue;
 public class FoodFragment extends Fragment {
     private View foodFragmentView;
     private TextView displayText;
-    private ProgressDialog dialog;
     private Button button;
     private RequestQueue Queue;
     private EditText getsearch;
+    private int count = 0;
 
 
 
@@ -60,7 +62,6 @@ public class FoodFragment extends Fragment {
 
         foodFragmentView = inflater.inflate(R.layout.fragment_food,container,false);
         Queue = Volley.newRequestQueue(container.getContext());
-        dialog = new ProgressDialog(container.getContext());
         displayText = (TextView) foodFragmentView.findViewById(R.id.food_textview);
         displayText.setMovementMethod(new ScrollingMovementMethod());
         Queue = Volley.newRequestQueue(container.getContext());
@@ -78,7 +79,9 @@ public class FoodFragment extends Fragment {
             public void onClick(View v) {
                 displayText.setText(" ");
              jsonParse();
+
             }
+
         });
 
 
@@ -122,10 +125,19 @@ public class FoodFragment extends Fragment {
                                             + "\n Item protein: " + protein + "\n Item fat: " + fat
                                             + "\n Item saturated fat: " + sat_fat + "\n Item fiber: " + fiber
                                             + "\n Item carbohydrates: " + carbs+"\n\n");
+                                    count=1;
                                     //String res = getImage(search_item, ua);
                                    // displayText.append(res);
                                 }
+
+
                             }
+
+
+
+
+
+
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

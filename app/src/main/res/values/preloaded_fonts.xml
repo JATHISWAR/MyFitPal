@@ -3,7 +3,9 @@
     <array name="preloaded_fonts" translatable="false">
         <item>@font/actor</item>
         <item>@font/adamina</item>
+        <item>@font/alef</item>
         <item>@font/averia_gruesa_libre</item>
+        <item>@font/biryani</item>
         <item>@font/carter_one</item>
         <item>@font/crete_round</item>
         <item>@font/domine</item>
