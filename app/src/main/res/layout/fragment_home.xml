@@ -1,12 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
-    <androidx.recyclerview.widget.RecyclerView
+    <ScrollView
         android:id="@+id/recycler_menu"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="vertical"></androidx.recyclerview.widget.RecyclerView>
+        android:scrollbars="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="15dp"
+            app:cardBackgroundColor="#8E8787"
+            app:cardElevation="15dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white">
+
+                <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+                    android:id="@+id/layout_videoplayer"
+                    android:layout_width="366dp"
+                    android:layout_height="244dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:padding="15dp"
+                    app:autoPlay="false"
+                    app:showFullScreenButton="false"
+                    app:showYouTubeButton="false"
+                    app:videoId="@string/link" />
+
+                <TextView
+                    android:id="@+id/layout_video_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/layout_videoplayer"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="22dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/biryani"
+                    android:text="@string/title"
+                    android:textColor="#000000"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/layout_video_description"
+                    android:layout_width="343dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/layout_video_title"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/biryani"
+                    android:text="@string/description"
+                    android:textColor="#020202"
+                    android:textSize="10sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/layout_watch_btn"
+                    android:layout_width="336dp"
+                    android:layout_height="69dp"
+                    android:layout_below="@id/layout_video_description"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginBottom="35dp"
+                    android:background="@color/yellow"
+                    android:drawableLeft="@drawable/ic_watch"
+                    android:drawablePadding="-10dp"
+                    android:fontFamily="@font/biryani"
+                    android:gravity="center"
+                    android:padding="15dp"
+                    android:text="Watch In Full Screen"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="23dp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+
+    </ScrollView>
 
 </RelativeLayout>

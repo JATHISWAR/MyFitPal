@@ -25,17 +25,25 @@ import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.Abs
 public class HomeFragment extends Fragment {
     DatabaseReference VideosRef;
     RecyclerView recyclerView;
-    RecyclerView.LayoutManager layoutManager;
     String videoId;
     ProgressDialog loadingBar;
+    Button mybutton;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup view, @Nullable Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.fragment_home, view, false);
+        mybutton = (Button) rootView.findViewById(R.id.layout_watch_btn);
+        mybutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(),FullScreenActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
-
-        VideosRef = FirebaseDatabase.getInstance().getReference().child("Videos");
+     /*   VideosRef = FirebaseDatabase.getInstance().getReference().child("Videos");
         recyclerView = view.findViewById(R.id.recycler_menu);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(getContext());
@@ -47,15 +55,15 @@ public class HomeFragment extends Fragment {
         loadingBar.setMessage("Your videos are loading...");
         loadingBar.setCanceledOnTouchOutside(false);
         loadingBar.show();
+        onStart();*/
 
-        return inflater.inflate(R.layout.fragment_home,view,false);
+        return rootView;
 
-}
+    }
 
 
-    @Override
-    public void onStart() {
-        super.onStart();
+    public void adapter() {
+
 
         FirebaseRecyclerOptions<VideosModel> options =
                 new FirebaseRecyclerOptions.Builder<VideosModel>()
@@ -80,14 +88,13 @@ public class HomeFragment extends Fragment {
                         holder.watchButton.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                Intent intent = new Intent(view.getContext(),FullScreenActivity.class);
-                                intent.putExtra("link",model.getLink());
+                                Intent intent = new Intent(view.getContext(), FullScreenActivity.class);
+                                intent.putExtra("link", model.getLink());
                                 startActivity(intent);
                             }
                         });
 
                         loadingBar.dismiss();
-
 
 
                     }
@@ -105,10 +112,4 @@ public class HomeFragment extends Fragment {
         recyclerView.setAdapter(adapter);
         adapter.startListening();
     }
-
-
-
-
-
-
 }
