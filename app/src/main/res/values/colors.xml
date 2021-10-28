@@ -12,4 +12,6 @@
     <color name ="buttoncolor">#73ff70</color>
     <color name="search_button_color">#052963</color>
     <color name="off_white">#ffffd1</color>
+    <color name="appbar">#370A0A</color>
+    <color name="yellow">#FCD12A</color>
 </resources>
