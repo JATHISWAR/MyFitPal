@@ -1,10 +1,9 @@
 package com.jathiswarbhaskar.myfitpal;
 
 class VideosModel {
-    String title,description,link,Id;
+    private String title, description, link, Id;
 
     public VideosModel() {
-
     }
 
     public VideosModel(String title, String description, String link, String id) {
@@ -13,6 +12,7 @@ class VideosModel {
         this.link = link;
         Id = id;
     }
+
 
     public String getTitle() {
         return title;

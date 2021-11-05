@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText memail, mpassword;
     private FirebaseAuth mAuth;
     private ProgressDialog loadingBar;
+    private TextView admintext;
 
 
     @Override
@@ -42,10 +44,12 @@ public class MainActivity extends AppCompatActivity {
         signupbtn = (Button) findViewById(R.id.signup_button);
         mpassword = (EditText) findViewById(R.id.login_password_input);
         loginbtn = (Button) findViewById(R.id.login_button);
+        admintext = (TextView) findViewById(R.id.textView3);
         mAuth = FirebaseAuth.getInstance();
         loadingBar = new ProgressDialog(this);
         Login();
         Signup();
+        textviewtouch();
 
 
     }
@@ -133,7 +137,15 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
+public void textviewtouch(){
+        admintext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,VideosActivity.class);
+                startActivity(intent);
+            }
+        });
+}
 
 
 

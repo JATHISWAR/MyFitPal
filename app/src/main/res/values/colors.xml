@@ -14,4 +14,10 @@
     <color name="off_white">#ffffd1</color>
     <color name="appbar">#370A0A</color>
     <color name="yellow">#FCD12A</color>
+    <color name="colorPrimary">#BF007A</color>
+    <color name="colorPrimaryDark">#BF007A</color>
+    <color name="myblack">#000000</color>
+    <color name="pink">#980061</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="blue">#6B56EE</color>
 </resources>

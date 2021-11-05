@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.jathiswarbhaskar.myfitpal" >
+    package="com.jathiswarbhaskar.myfitpal">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -12,17 +12,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyFitPal"
         android:usesCleartextTraffic="true"
-        android:windowSoftInputMode="adjustPan|adjustResize" >
+        android:windowSoftInputMode="adjustPan|adjustResize">
+        <activity
+            android:name=".VideosActivity"
+            android:exported="true" />
+        <activity
+            android:name=".AdminActivity"
+            android:exported="true" />
         <activity
             android:name=".FullScreenActivity"
             android:exported="true" />
         <activity android:name=".SignUpActivity" />
         <activity
             android:name=".HomeActivity"
-            android:windowSoftInputMode="adjustPan|adjustResize" >
-        </activity>
+            android:windowSoftInputMode="adjustPan|adjustResize" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".SplashScreenActivity" >
+        <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
