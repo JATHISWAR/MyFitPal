@@ -137,6 +137,15 @@ public class VideosActivity extends AppCompatActivity {
                             }
                         });
 
+                        holder.watchButton.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Intent intent = new Intent(VideosActivity.this,FullScreenActivity.class);
+                                intent.putExtra("link",model.getLink());
+                                loadingBar.dismiss();
+                                startActivity(intent);
+                            }
+                        });
 
 
                         loadingBar.dismiss();
@@ -161,6 +170,7 @@ public class VideosActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         adapter.startListening();
     }
+
 
 
 }
