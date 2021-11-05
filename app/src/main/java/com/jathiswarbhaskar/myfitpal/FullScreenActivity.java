@@ -34,7 +34,6 @@ public class FullScreenActivity extends AppCompatActivity {
             @Override
             public void onReady(YouTubePlayer youTubePlayer) {
                 youTubePlayer.loadVideo(videolink, 0);
-                Toast.makeText(FullScreenActivity.this, videolink, Toast.LENGTH_SHORT).show();
 
             }
 

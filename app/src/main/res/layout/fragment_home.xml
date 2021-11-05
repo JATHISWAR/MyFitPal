@@ -87,7 +87,27 @@
                     android:textColor="@color/black"
                     android:textSize="23dp"
                     android:textStyle="bold" />
-
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/view_more"
+                    android:layout_width="336dp"
+                    android:layout_height="69dp"
+                    android:layout_below="@id/layout_watch_btn"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginBottom="35dp"
+                    android:background="@color/blue"
+                    android:drawablePadding="-10dp"
+                    android:fontFamily="@font/biryani"
+                    android:gravity="center"
+                    android:padding="15dp"
+                    android:text="View More"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="23dp"
+                    android:textStyle="bold" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 

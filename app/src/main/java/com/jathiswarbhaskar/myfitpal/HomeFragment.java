@@ -27,89 +27,38 @@ public class HomeFragment extends Fragment {
     RecyclerView recyclerView;
     String videoId;
     ProgressDialog loadingBar;
-    Button mybutton;
+    Button mybutton,viewmore;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup view, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_home, view, false);
         mybutton = (Button) rootView.findViewById(R.id.layout_watch_btn);
+        viewmore = (Button) rootView.findViewById(R.id.view_more);
         mybutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(),FullScreenActivity.class);
+                intent.putExtra("link","kL_NJAkCQBg");
                 startActivity(intent);
             }
         });
 
 
-     /*   VideosRef = FirebaseDatabase.getInstance().getReference().child("Videos");
-        recyclerView = view.findViewById(R.id.recycler_menu);
-        recyclerView.setHasFixedSize(true);
-        layoutManager = new LinearLayoutManager(getContext());
-        loadingBar = new ProgressDialog(getContext());
-        recyclerView.setLayoutManager(layoutManager);
+        viewmore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(),VideosActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
-        loadingBar.setTitle("Please Wait");
-        loadingBar.setMessage("Your videos are loading...");
-        loadingBar.setCanceledOnTouchOutside(false);
-        loadingBar.show();
-        onStart();*/
 
         return rootView;
 
     }
 
 
-    public void adapter() {
 
-
-        FirebaseRecyclerOptions<VideosModel> options =
-                new FirebaseRecyclerOptions.Builder<VideosModel>()
-                        .setQuery(VideosRef, VideosModel.class)
-                        .build();
-
-
-        FirebaseRecyclerAdapter<VideosModel, VideosViewHolder> adapter =
-                new FirebaseRecyclerAdapter<VideosModel, VideosViewHolder>(options) {
-                    @Override
-                    protected void onBindViewHolder(@NonNull final VideosViewHolder holder, int position, @NonNull final VideosModel model) {
-                        holder.title.setText(model.getTitle());
-                        holder.description.setText(model.getDescription());
-                        holder.player.addYouTubePlayerListener(new AbstractYouTubePlayerListener() {
-                            @Override
-                            public void onReady(YouTubePlayer youTubePlayer) {
-                                videoId = model.getLink();
-                                youTubePlayer.cueVideo(videoId, 0);
-                            }
-                        });
-
-                        holder.watchButton.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                Intent intent = new Intent(view.getContext(), FullScreenActivity.class);
-                                intent.putExtra("link", model.getLink());
-                                startActivity(intent);
-                            }
-                        });
-
-                        loadingBar.dismiss();
-
-
-                    }
-
-
-                    @NonNull
-                    @Override
-                    public VideosViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_home, parent, false);
-                        VideosViewHolder holder = new VideosViewHolder(view);
-                        return holder;
-                    }
-                };
-
-        recyclerView.setAdapter(adapter);
-        adapter.startListening();
-    }
 }
